@@ -16,7 +16,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Frankenstein</a>
+      <a class="navbar-brand" href="index.html">Frankenstein</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -48,19 +48,31 @@
       <span style="visibility:hidden" id='page'>49</span>
       <h2 id='folio'>24r</h2> <!-- you can style this h2 element differently, but you should keep the id="folio" and the elements value *unchanged* -->
       <div id="stats"></div>
-      <div class="form-group">
-        <select class="form-control" id="sel-hand" onChange="selectHand(event)">
-          <option value="both">Both Hands</option>
-          <option value="Mary">Mary Shelley's Hand Highlighted</option>
-          <option value="Percy">Percy Shelley's Hand Highlighted</option>
-        </select>
+      <div class="d-flex align-items-center mb-3">
+        <div class="flex-grow-1 mr-3">
+          <div class="form-group mb-0">
+            <select class="form-control" id="sel-hand" onChange="selectHand(event)">
+              <option value="both">Both Hands</option>
+              <option value="Mary">Mary Shelley's Hand Highlighted</option>
+              <option value="Percy">Percy Shelley's Hand Highlighted</option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex">
+          <a href="23v.html" class="btn btn-outline-secondary">← Previous Page</a>
+          <a href="24v.html" class="btn btn-outline-secondary">Next Page →</a>
+        </div>
       </div>
       <div class="row">
         <div class="col-5">   
-            <div id="my-mirador"></div>
+          <div id="my-mirador"></div>
         </div>
         <div class="col-7" id="text"></div>
       </div>
+    </div>
+    <div style="text-align: right">
+      <button id="toggle-del" class="btn btn-outline-secondary" style="text-align: right">Toggle Deletions</button>
+      <button id="toggle-add" class="btn btn-outline-secondary" style="text-align: right">Toggle Additions</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
