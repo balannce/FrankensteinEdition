@@ -75,6 +75,41 @@
     
     
     <!-- add additional templates below, for example to transform the tei:lb in <br/> empty elements, tei:hi[@rend = 'sup'] in <sup> elements, the underlined text, additions with the attribute "overwritten" etc. -->
+    <xsl:template match="tei:lb">
+        <xsl:apply-templates/>
+        <br/>
+    </xsl:template>
 
+    <xsl:template match="tei:hi[@rend='sup']">
+        <sup>
+            <xsl:apply-templates/>
+        </sup>
+    </xsl:template>
+
+    <xsl:template match="tei:hi[@rend='u']">
+        <u>
+            <xsl:apply-templates/>
+        </u>
+    </xsl:template>
+
+    <xsl:template match="tei:add[@place='supralinear']">
+        <sup>
+            <xsl:apply-templates/>
+        </sup>
+    </xsl:template>
+
+    <xsl:template match="tei:add[@place='infralinear']">
+        <sub>
+            <xsl:apply-templates/>
+        </sub>
+    </xsl:template>
+
+    <xsl:template match="tei:metamark[@function='pagenumber']">
+        <p align="right">
+            <span style="border: 1px solid black; border-radius: 50%">
+                <xsl:apply-templates/>
+            </span>
+        </p>
+    </xsl:template>
     
 </xsl:stylesheet>

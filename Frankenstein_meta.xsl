@@ -18,10 +18,15 @@
                          <div class="col">
                             <ul> 
                                 <li>Total number of modifications: 
-                                    <xsl:value-of select="count(//tei:del|//tei:add)" /> <!-- Counts all the add and del elements, and puts it in a list item -->
+                                    <xsl:value-of select="count(//tei:del|//tei:add)"/> <!-- Counts all the add and del elements, and puts it in a list item -->
                                 </li>
                                 <li>Number of additions: 
                                     <!-- count the additions only -->
+                                    <xsl:value-of select="count(//tei:add)"/> 
+                                </li>
+                                <li>Number of changes by Percy: 
+                                    <!-- count the additions only -->
+                                    <xsl:value-of select="count(//tei:add[@hand='#PBS']|//tei:del[@hand='#PBS'])"/> 
                                 </li>
                                 <!-- add other list items in which you count things, such as the modifications made by Percy -->
                             </ul>
@@ -29,6 +34,4 @@
                      </div>
         <hr/>
     </xsl:template>
-    
-
 </xsl:stylesheet>
