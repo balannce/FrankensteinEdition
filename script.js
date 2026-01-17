@@ -54,6 +54,10 @@ function documentLoader() {
       var parser = new DOMParser();
       var xml_doc = parser.parseFromString(xmlString, "text/xml");
       var xsl_doc = parser.parseFromString(xslString, "text/xml");
+      async function main() {
+        xml_content = await fetch(folio_xml).then(response => response.text())
+      }
+      main().then(console.log).catch(console.error)
 
       var xsltProcessor = new XSLTProcessor();
       xsltProcessor.importStylesheet(xsl_doc);
@@ -129,7 +133,7 @@ document.getElementById("toggle-del").addEventListener('click', function() {
 
 let addVisible = true;
 document.getElementById("toggle-add").addEventListener('click', function() {
-  const additions = document.querySelectorAll('add');
+  const additions = document.querySelectorAll("add");
   additions.forEach(el => {
     el.style.display = addVisible ? 'none':"";
   });

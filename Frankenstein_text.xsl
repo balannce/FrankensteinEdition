@@ -65,15 +65,7 @@
             <xsl:apply-templates/>
         </del>
     </xsl:template>
-    
-    <!-- all the supralinear additions are given in a span with the class supraAdd, make sure to put this class in superscript in the CSS file, -->
-    <xsl:template match="tei:add[@place = 'supralinear']">
-        <span class="supraAdd">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-    
-    
+        
     <!-- add additional templates below, for example to transform the tei:lb in <br/> empty elements, tei:hi[@rend = 'sup'] in <sup> elements, the underlined text, additions with the attribute "overwritten" etc. -->
     <xsl:template match="tei:lb">
         <xsl:apply-templates/>
@@ -92,16 +84,26 @@
         </u>
     </xsl:template>
 
-    <xsl:template match="tei:add[@place='supralinear']">
-        <sup>
+    <xsl:template match="tei:add">
+        <add>
             <xsl:apply-templates/>
-        </sup>
+        </add>
+    </xsl:template>
+
+    <xsl:template match="tei:add[@place='supralinear']">
+        <add>
+            <sup>
+                <xsl:apply-templates/>
+            </sup>
+        </add>
     </xsl:template>
 
     <xsl:template match="tei:add[@place='infralinear']">
-        <sub>
-            <xsl:apply-templates/>
-        </sub>
+        <add>
+            <sub>
+                <xsl:apply-templates/>
+            </sub>
+        </add>
     </xsl:template>
 
     <xsl:template match="tei:metamark[@function='pagenumber']">
