@@ -2,7 +2,7 @@
 let tei = document.getElementById("folio");
 let tei_xml = tei.innerHTML;
 let extension = ".xml";
-let folio_xml = tei_xml.concat(extension);
+let folio_xml = `../xml/${tei_xml}.xml`;
 let page = document.getElementById("page");
 let pageN = page.innerHTML;
 let number = Number(pageN);
@@ -35,7 +35,7 @@ var mirador = Mirador.viewer({
   },
   "windows": [
     {
-      loadedManifest: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/53fd0f29-d482-46e1-aa9d-37829b49987d.json",
+      manifestId: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/53fd0f29-d482-46e1-aa9d-37829b49987d.json",
       canvasIndex: number,
       thumbnailNavigationPosition: 'off'
     }
@@ -48,17 +48,12 @@ function documentLoader() {
 
     Promise.all([
       fetch(folio_xml).then(response => response.text()),
-      fetch("Frankenstein_text.xsl").then(response => response.text())
+      fetch("../Frankenstein_text.xsl").then(response => response.text())
     ])
     .then(function ([xmlString, xslString]) {
       var parser = new DOMParser();
       var xml_doc = parser.parseFromString(xmlString, "text/xml");
       var xsl_doc = parser.parseFromString(xslString, "text/xml");
-      async function main() {
-        xml_content = await fetch(folio_xml).then(response => response.text())
-      }
-      main().then(console.log).catch(console.error)
-
       var xsltProcessor = new XSLTProcessor();
       xsltProcessor.importStylesheet(xsl_doc);
       var resultDocument = xsltProcessor.transformToFragment(xml_doc, document);
@@ -77,7 +72,7 @@ function documentLoader() {
 
     Promise.all([
       fetch(folio_xml).then(response => response.text()),
-      fetch("Frankenstein_meta.xsl").then(response => response.text())
+      fetch("../Frankenstein_meta.xsl").then(response => response.text())
     ])
     .then(function ([xmlString, xslString]) {
       var parser = new DOMParser();
