@@ -130,7 +130,7 @@ document.getElementById("toggle-del").addEventListener('click', function() {
   });
   delVisible = !delVisible;
 });
-
+// function that will toggle the display of the additions by clicking on a button
 let addVisible = true;
 document.getElementById("toggle-add").addEventListener('click', function() {
   const additions = document.querySelectorAll("add");
@@ -139,4 +139,21 @@ document.getElementById("toggle-add").addEventListener('click', function() {
   });
   addVisible = !addVisible;
 });
+
 // EXTRA: write a function that will display the text as a reading text by clicking on a button or another dropdown list, meaning that all the deletions are removed and that the additions are shown inline (not in superscript)
+let readMode = true;
+document.getElementById("toggle-readmode").addEventListener('click', function() {
+  const additions = document.querySelectorAll("add");
+  const deletions = document.querySelectorAll("del");
+  const metamarks = document.querySelectorAll("metamark");
+  additions.forEach(el => {
+    el.style.cssText = readMode ? "font-size: medium; vertical-align: baseline; display: inline;" : "";
+  });
+  deletions.forEach(el => {
+    el.style.display = readMode ? "none" : "";
+  });
+  metamarks.forEach(el => {
+    el.style.display = readMode ? "none" : "";
+  });
+  readMode = !readMode;
+});

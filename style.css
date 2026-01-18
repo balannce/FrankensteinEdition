@@ -60,3 +60,13 @@ figcaption {
 #intro {
     width: fit-content;
 }
+
+add[place="supralinear"] {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+add[place="infralinear"] {
+    vertical-align: sub;
+    font-size: smaller;
+}

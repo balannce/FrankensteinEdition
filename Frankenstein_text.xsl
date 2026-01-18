@@ -86,24 +86,15 @@
 
     <xsl:template match="tei:add">
         <add>
+            <xsl:copy-of select="@place"/>
             <xsl:apply-templates/>
         </add>
     </xsl:template>
 
-    <xsl:template match="tei:add[@place='supralinear']">
-        <add>
-            <sup>
-                <xsl:apply-templates/>
-            </sup>
-        </add>
-    </xsl:template>
-
-    <xsl:template match="tei:add[@place='infralinear']">
-        <add>
-            <sub>
-                <xsl:apply-templates/>
-            </sub>
-        </add>
+    <xsl:template match="tei:metamark">
+        <metamark>
+            <xsl:apply-templates/>
+        </metamark>
     </xsl:template>
 
     <xsl:template match="tei:metamark[@function='pagenumber']">
