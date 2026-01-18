@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
 
 .navbar {
@@ -22,7 +22,25 @@ table, th, td {
 }
 
 img {
-    max-width: 100%;
+    max-width: 80%;
+}
+
+.flexcontainer figure {
+  flex: 0 0 70%;
+}
+
+.flexcontainer figure img {
+  width: 100%;
+  max-width: 70vw;
+}
+
+.table-wrapper {
+  flex: 1;
+ }
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 p {
@@ -55,9 +73,6 @@ figcaption {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-}
-
-#intro {
     width: fit-content;
 }
 

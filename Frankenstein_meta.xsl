@@ -22,7 +22,10 @@
                         <!-- count the additions only -->
                         <xsl:value-of select="count(//tei:add)"/> 
                     </li>
-                    <!-- add other list items in which you count things, such as the modifications made by Percy -->
+                        <!-- add other list items in which you count things, such as the modifications made by Percy -->
+                    <li>Number of deletions: 
+                        <xsl:value-of select="count(//tei:del)"/> 
+                    </li>
                     <li>Number of changes by Mary:
                         <xsl:value-of select="count(//tei:add[@hand='#MWS']|//tei:del[@hand='#MWS'])"/> 
                     </li>
