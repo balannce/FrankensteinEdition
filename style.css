@@ -1,6 +1,21 @@
 body {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
+
+.navbar {
+    background-color: rgb(157, 202, 218);
+}
+
+h1, h2 {
+    text-align: center
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 6px;
+}
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -32,4 +47,16 @@ p {
     display: none !important;
 }
 
+figcaption {
+    font-style: italic;
+}
 
+.flexcontainer {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#intro {
+    width: fit-content;
+}
