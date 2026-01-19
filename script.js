@@ -104,16 +104,16 @@ function documentLoader() {
   var PercyArray = Array.from(visible_percy);
     if (event.target.value == 'both') {
     //write an forEach() method that shows all the text written and modified by both hand (in black?). The forEach() method of Array instances executes a provided function once for each array element.
-      MaryArray.forEach(el => el.style.backgroundColor = 'White');
-      PercyArray.forEach(el => el.style.backgroundColor = 'White');
+      MaryArray.forEach(el => el.style.backgroundColor = 'rgb(201, 229, 215)');
+      PercyArray.forEach(el => el.style.backgroundColor = 'rgb(201, 229, 215)');
     } else if (event.target.value == 'Mary') {
      //write an forEach() method that shows all the text written and modified by Mary in a different color (or highlight it) and the text by Percy in black. 
-       MaryArray.forEach(el => el.style.backgroundColor = 'Linen');
-       PercyArray.forEach(el => el.style.backgroundColor = 'White');
+       MaryArray.forEach(el => el.style.backgroundColor = 'White');
+       PercyArray.forEach(el => el.style.backgroundColor = 'rgb(201, 229, 215)');
     } else if (event.target.value == "Percy") {
      //write an forEach() method that shows all the text written and modified by Percy in a different color (or highlight it) and the text by Mary in black.
-      MaryArray.forEach(el => el.style.backgroundColor = 'White');
-      PercyArray.forEach(el => el.style.backgroundColor = 'Linen');
+      MaryArray.forEach(el => el.style.backgroundColor = 'rgb(201, 229, 215)');
+      PercyArray.forEach(el => el.style.backgroundColor = 'White');
     }
   }
 // write another function that will toggle the display of the deletions by clicking on a button
