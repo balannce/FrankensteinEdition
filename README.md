@@ -1,3 +1,4 @@
 Hello! Welcome to my Text as Data project.
 Here, you will find a couple of pages of Mary Shelley's *Frankenstein*, shown as a IIIF manifest, with transcription according to the TEI and BDMP guidelines.
-main page: https://balannce.github.io/FrankensteinEdition/html/index
+
+Main page: https://balannce.github.io/FrankensteinEdition/html/index
