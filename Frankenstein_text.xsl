@@ -98,7 +98,14 @@
     </xsl:template>
 
     <xsl:template match="tei:metamark[@function='pagenumber']">
-        <p align="right">
+        <p>
+            <xsl:attribute name="style">
+                text-align:
+                <xsl:choose>
+                    <xsl:when test="number(normalize-space(.)) mod 2 = 0">left</xsl:when>
+                    <xsl:otherwise>right</xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
             <span style="border: 1px solid black; border-radius: 50%">
                 <xsl:apply-templates/>
             </span>

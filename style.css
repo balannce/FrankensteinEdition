@@ -1,9 +1,12 @@
 body {
-    background-color: white;
+    background-color: rgb(201, 229, 215);
+    color: rgba(17, 45, 7);
 }
 
 .navbar {
-    background-color: rgb(157, 202, 218);
+    background-image: url('images/greenTexture.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 h1, h2 {
@@ -84,4 +87,13 @@ add[place="supralinear"] {
 add[place="infralinear"] {
     vertical-align: sub;
     font-size: smaller;
+}
+
+.btn {
+    background-color: white !important;
+}
+
+.btn:hover {
+    background-color: rgba(17, 45, 7) !important;
+    color: white !important;
 }
